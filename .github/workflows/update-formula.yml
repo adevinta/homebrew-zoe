@@ -10,7 +10,6 @@ jobs:
 
   update-brew-formula:
     name: Update brew formula
-    needs: publish-packages
     runs-on: ubuntu-latest
 
     steps:
