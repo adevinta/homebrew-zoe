@@ -1,0 +1,33 @@
+name: Update brew formula
+
+on:
+  workflow_dispatch:
+#    inputs:
+#      tag:
+#        description: 'Tag to use'
+
+jobs:
+
+  update-brew-formula:
+    name: Update brew formula
+    needs: publish-packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - uses: fwilhe2/setup-kotlin@main
+
+      - run: |
+          VERSION=$(curl -s https://api.github.com/repos/adevinta/zoe/releases/latest | jq -r .tag_name | sed -e 's/^v//')
+          dev/scripts/helper.main.kts -- formula \
+            --version ${VERSION} \
+            --url https://github.com/adevinta/zoe/releases/download/v${VERSION}/zoe-${VERSION}.zip \
+            > Formula/zoe.rb
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "[auto] Update brew formula"
+          file_pattern: "Formula/*.rb"
