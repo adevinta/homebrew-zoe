@@ -2,10 +2,10 @@ class Zoe < Formula
   desc "The kafka CLI for humans"
   homepage "https://adevinta.github.io/zoe"
   bottle :unneeded
-  version "0.26.1"
+  version "0.27.0"
   
-  url "https://github.com/adevinta/zoe/releases/download/v0.26.1/zoe-0.26.1.zip"
-  sha256 "67cd20c309417a5fad8600d8c84a8ef8dc42acb8e0c9b9139e091a6f47487ffa"
+  url "https://github.com/adevinta/zoe/releases/download/v0.27.0/zoe-0.27.0.zip"
+  sha256 "c540c736822131131f64675251b3f95c7fd50ea8a6868455003d803137f1224f"
 
   def install
     bin.install "bin/zoe"
