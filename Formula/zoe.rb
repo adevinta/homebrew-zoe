@@ -1,7 +1,6 @@
 class Zoe < Formula
   desc "The kafka CLI for humans"
   homepage "https://adevinta.github.io/zoe"
-  bottle :unneeded
   version "0.27.3"
   
   url "https://github.com/adevinta/zoe/releases/download/v0.27.3/zoe-0.27.3.zip"

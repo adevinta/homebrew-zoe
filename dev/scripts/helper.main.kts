@@ -38,7 +38,6 @@ fun generateFormula(version: String, url: String, hash: String) = """
     |class Zoe < Formula
     |  desc "The kafka CLI for humans"
     |  homepage "https://adevinta.github.io/zoe"
-    |  bottle :unneeded
     |  version "$version"
     |  
     |  url "$url"
